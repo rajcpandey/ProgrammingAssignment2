@@ -39,10 +39,7 @@ makeCacheMatrix <- function(x = matrix()){
 
 cacheSolve <- function(x, ...){
   #check if passed parameter is a matrix
-  if(is.matrix(x$get())){
-    #check if the passed parameter is a square matrix
-    if(nrow(x$get()) == ncol(x$get())){
-      m <- x$getInv()
+     m <- x$getInv()
       #inverse matrix
       if(!is.null(m)){
         print("get inverse")
@@ -53,12 +50,4 @@ cacheSolve <- function(x, ...){
         x$setInv(m)
         m
       }
-    } 
-    else{
-      print("Not a convertible matrix")
-    }
-  }
-  else{
-    print("Not a matrix, input must be of a matrix class")
-  }
 }
