@@ -23,15 +23,14 @@ makeCacheMatrix <- function(x = matrix()){
   get <- function() x
   setInv <- function(solve) m <<- solve
   getInv <- function() m
+  #return list object with functions set, get, setInv, getInv as element of the list object
   list(set = set, get = get,
        setInv = setInv,
        getInv = getInv)
 }
 
 
-## cacheSolve is the main caller function once the matrix object is ready for use. I have implemented two additional
-## checks within the function are to 1) confirm that the supplied object is a matrix 2) the supplied matrix is a
-## square matrix.
+## cacheSolve is the main caller function once the matrix object is ready for use. 
 
 ## x$getInv() assign m with the value which was passed to create the matrix. Next statement checks for the empltiness
 ## of the variable and if not then recall the cached inverse from super assigned variable m otherwise calculate inverse
